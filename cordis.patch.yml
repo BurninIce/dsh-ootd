@@ -1,0 +1,12 @@
+# dsh-ootd bundle patch.
+#
+# One host row. Configure it by id in the profile's cordis.patch.yml:
+#
+#   - id: ootd
+#     config:
+#       sceneCity: 临川市
+#       weatherCity: 北京
+#       cardFile: /path/to/personas/<id>/card.json
+- insert:
+    - id: ootd
+      name: dsh-ootd

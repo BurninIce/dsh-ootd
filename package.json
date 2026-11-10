@@ -1,0 +1,56 @@
+{
+  "name": "dsh-ootd",
+  "version": "0.1.0",
+  "description": "Daily-life anchor for a conversation agent: today's scene, real weather, schedule and outfit, generated once a day and injected as a scoped system section.",
+  "type": "module",
+  "license": "MIT",
+  "author": "BurninIce",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurninIce/dsh-ootd.git"
+  },
+  "homepage": "https://github.com/BurninIce/dsh-ootd#readme",
+  "bugs": {
+    "url": "https://github.com/BurninIce/dsh-ootd/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "roleplay",
+    "daily",
+    "weather",
+    "outfit"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=24",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-tools": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/schemastery": "~3.19.0"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none \"test/*.test.js\"",
+    "test:integration": "node --import ./tests/integration/register-dsh-packages.mjs ./tests/integration/ootd.mjs",
+    "check": "node --check lib/index.js"
+  }
+}
